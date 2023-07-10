@@ -13,7 +13,7 @@
   getResponseFromAPI('写一首诗')
   async function getResponseFromAPI(input) {
     const endpoint = 'https://api.openai.com/v1/completions';
-    const apiKey = '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'; //换成自己的API Key
+    const apiKey = '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'; //换成自己的API Key
     const prompt = input;
 
     const response = await fetch(endpoint, {
@@ -38,7 +38,8 @@
     while(1){
       const {done, value} = await result.read()
       if(done) break;
-      console.log(textDecoder.decode(value));
+      // console.log(textDecoder.decode(value));
+      document.write(textDecoder.decode(value))
     }
     // return result.choices[0].text;
 }
